@@ -1,0 +1,81 @@
+#root *
+{
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 20px;
+}
+
+#main-content
+{
+  background-color: lightgray;
+  width: 95%;
+  height: 90vh;
+  margin: 20px;
+  border-radius: 20px;
+}
+#tool-bar
+{
+  width: 100%;
+  justify-content: center;
+  display: flex;
+  margin: 20px;
+}
+
+#tool-bar input
+{
+  width: 80%;
+  border-radius: 10px;
+  height: 30px;
+}
+
+#tool-bar button
+{
+  border-radius: 10px;
+  height: 35px;
+  width: 140px;
+  margin-left: 10px;
+  background-color: greenyellow;
+}
+
+#root-container
+{
+  display: flex;
+  justify-content: center;
+}
+
+#todos-container
+{
+  margin: 20px;
+  border-radius: 20px;
+  background-color: rgb(172, 172, 172);
+  padding: 20px;
+}
+
+#todos-container p
+{
+  background-color: lightgray;
+  border-radius: 20px;
+  padding: 10px;
+  margin: 20px;
+}
+
+#todos-container p:last-child
+{
+  width: 100%;
+}
+
+#todos-container p:first-child
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: lightgreen;
+  border-radius: 50%;
+  height: 20px;
+  width: 20px;
+}
+
+#todo-item
+{
+  align-items: center;
+  display: flex;
+}
