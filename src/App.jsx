@@ -1,38 +1,43 @@
-import { useState } from 'react'
-import './App.css'
-import MainWrapper from './components/MainWrapper'
-import ToolsMenu from './components/ToolsMenu'
-import TodosContainer from './components/TodosContainer'
+import { useState } from "react";
+import "./App.css";
+import MainWrapper from "./components/MainWrapper";
+import ToolsMenu from "./components/ToolsMenu";
+import TodosContainer from "./components/TodosContainer";
 
 function App() {
-  const [todos,setTodos] = useState([
+  const [todos, setTodos] = useState([
     "Go to Gym",
     "Go to Class",
-    "Go Shopping"
+    "Go Shopping",
   ]);
 
-  function renderTodos()
-  {
-    return todos.map(function(value,i){
-      return <div id='todo-item'> <p>{i+1}</p> <p key={i}>{value}</p></div>
-    })
+  function renderTodos() {
+    return todos.map(function (value, i) {
+      return (
+        <div onClick={() => removeTodos(i)} key={i} id="todo-item">
+          {" "}
+          <p>{i + 1} </p> <p>{value}</p>
+        </div>
+      );
+    });
   }
 
-  function addTodos(newTodo)
-  {
-    setTodos([...todos,newTodo]);
+  function removeTodos(index) {
+    setTodos(todos.filter((v, i) => i !== index));
+  }
+
+  function addTodos(newTodo) {
+    setTodos([...todos, newTodo]);
   }
 
   return (
     <div id="root-container">
-     <MainWrapper>
-      <ToolsMenu addTodo={addTodos}></ToolsMenu>
-      <TodosContainer>
-        {renderTodos()}
-      </TodosContainer>
-     </MainWrapper>
+      <MainWrapper>
+        <ToolsMenu addTodo={addTodos}></ToolsMenu>
+        <TodosContainer>{renderTodos()}</TodosContainer>
+      </MainWrapper>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;

@@ -76,6 +76,7 @@
 
 #todo-item
 {
+  cursor: pointer;
   align-items: center;
   display: flex;
 }
