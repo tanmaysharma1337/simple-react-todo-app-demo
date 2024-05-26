@@ -3,6 +3,7 @@ import "./App.css";
 import MainWrapper from "./components/MainWrapper";
 import ToolsMenu from "./components/ToolsMenu";
 import TodosContainer from "./components/TodosContainer";
+import TodoState from "./components/TodoState";
 
 function App() {
   const [todos, setTodos] = useState([
@@ -14,9 +15,9 @@ function App() {
   function renderTodos() {
     return todos.map(function (value, i) {
       return (
-        <div onClick={() => removeTodos(i)} key={i} id="todo-item">
+        <div key={i} id="todo-item">
           {" "}
-          <p>{i + 1} </p> <p>{value}</p>
+          <p onClick={() => removeTodos(i)}>{i + 1} </p> <TodoState>{value}</TodoState>
         </div>
       );
     });

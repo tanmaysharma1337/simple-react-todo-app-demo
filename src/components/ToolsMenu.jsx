@@ -16,6 +16,7 @@ const ToolsMenu = ({ addTodo }) => {
         onChange={(e) => setTodoInputValue(e.target.value)}
         value={todoInputValue}
         type="text"
+        placeholder="Add new Todo item"
       />
       <button onClick={passTodo}>Add</button>
     </div>
