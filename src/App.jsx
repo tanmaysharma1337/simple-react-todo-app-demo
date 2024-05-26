@@ -17,7 +17,8 @@ function App() {
       return (
         <div key={i} id="todo-item">
           {" "}
-          <p onClick={() => removeTodos(i)}>{i + 1} </p> <TodoState>{value}</TodoState>
+          <p onClick={() => removeTodos(i)}>{i + 1} </p>{" "}
+          <TodoState>{value}</TodoState>
         </div>
       );
     });
@@ -27,14 +28,10 @@ function App() {
     setTodos(todos.filter((v, i) => i !== index));
   }
 
-  function addTodos(newTodo) {
-    setTodos([...todos, newTodo]);
-  }
-
   return (
     <div id="root-container">
       <MainWrapper>
-        <ToolsMenu addTodo={addTodos}></ToolsMenu>
+        <ToolsMenu addTodo={setTodos}></ToolsMenu>
         <TodosContainer>{renderTodos()}</TodosContainer>
       </MainWrapper>
     </div>

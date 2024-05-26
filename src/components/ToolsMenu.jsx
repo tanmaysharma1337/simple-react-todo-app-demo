@@ -5,7 +5,7 @@ const ToolsMenu = ({ addTodo }) => {
 
   function passTodo() {
     if (todoInputValue) {
-      addTodo(todoInputValue);
+      addTodo((todos) => [...todos, todoInputValue]);
       setTodoInputValue("");
     }
   }
